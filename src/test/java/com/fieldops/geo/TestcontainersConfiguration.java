@@ -9,10 +9,14 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration(proxyBeanMethods = false)
 class TestcontainersConfiguration {
 
+    private static final DockerImageName POSTGIS_IMAGE =
+            DockerImageName.parse("postgis/postgis:18-3.6")
+                    // Testcontainers debe tratar la imagen de PostGIS como compatible con PostgreSQLContainer.
+                    .asCompatibleSubstituteFor("postgres");
+
     @Bean
     @ServiceConnection
     PostgreSQLContainer postgresContainer() {
-        return new PostgreSQLContainer(DockerImageName.parse("postgres:latest"));
+        return new PostgreSQLContainer(POSTGIS_IMAGE);
     }
-
 }
