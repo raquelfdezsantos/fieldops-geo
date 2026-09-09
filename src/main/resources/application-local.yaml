@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5432}/${POSTGRES_DB:fieldops_geo}
+    username: ${POSTGRES_USER:fieldops}
+    password: ${POSTGRES_PASSWORD}
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
