@@ -1,3 +1,12 @@
 spring:
   application:
-    name: FieldOps_Geo
+    name: fieldops-geo
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+logging:
+  level:
+    root: INFO

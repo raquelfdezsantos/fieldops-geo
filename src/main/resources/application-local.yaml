@@ -4,7 +4,6 @@ spring:
     username: ${POSTGRES_USER:fieldops}
     password: ${POSTGRES_PASSWORD}
 
-  jpa:
-    open-in-view: false
-    hibernate:
-      ddl-auto: validate
+logging:
+  level:
+    com.fieldops.geo: DEBUG
